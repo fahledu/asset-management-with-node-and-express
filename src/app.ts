@@ -1,11 +1,11 @@
 import express, { Request, Response } from "express";
-import { getUser } from "./controllers/user-controller";
+import router from "./routers";
 
 const app = express();
 
 function createApp() {
 
-    app.get('/', getUser);
+    app.use('/api', router);
 
     return app;
 };
