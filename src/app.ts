@@ -1,12 +1,11 @@
 import express, { Request, Response } from "express";
+import { getUser } from "./controllers/user-controller";
 
 const app = express();
 
 function createApp() {
 
-    app.get('/', (req: Request, res: Response) => {
-        res.send('Hello World')
-    })
+    app.get('/', getUser);
 
     return app;
 };
